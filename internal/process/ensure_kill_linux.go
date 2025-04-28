@@ -1,9 +1,9 @@
-// +build linux
+//go:build linux
 
-package main
+package process
 
 import "syscall"
 
-func ensureKill(p *process) {
+func ensureKill(p *Process) {
 	p.SysProcAttr.Pdeathsig = syscall.SIGKILL
 }
